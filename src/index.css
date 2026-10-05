@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-base-950 text-slate-200 font-sans antialiased;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #1a2540 #0b1220;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-base-900;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-base-700 rounded;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-base-600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-base-850 border border-base-700 rounded-xl;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:border-base-600 hover:bg-base-800;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-cyan-glow/90 text-base-950 hover:bg-cyan-glow hover:shadow-lg hover:shadow-cyan-glow/20;
+  }
+  .btn-secondary {
+    @apply btn bg-base-700 text-slate-200 hover:bg-base-600 border border-base-600;
+  }
+  .btn-danger {
+    @apply btn bg-status-critical/90 text-white hover:bg-status-critical;
+  }
+  .btn-success {
+    @apply btn bg-status-normal/90 text-base-950 hover:bg-status-normal;
+  }
+  .input {
+    @apply bg-base-900 border border-base-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-glow/50 focus:ring-1 focus:ring-cyan-glow/30 transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-normal {
+    @apply badge bg-status-normal/15 text-status-normal border border-status-normal/30;
+  }
+  .badge-warning {
+    @apply badge bg-status-warning/15 text-status-warning border border-status-warning/30;
+  }
+  .badge-critical {
+    @apply badge bg-status-critical/15 text-status-critical border border-status-critical/30;
+  }
+  .badge-info {
+    @apply badge bg-status-info/15 text-status-info border border-status-info/30;
+  }
+  .stat-card {
+    @apply card p-5 flex flex-col gap-2;
+  }
+  .table-header {
+    @apply text-left text-xs font-medium text-slate-400 uppercase tracking-wider px-4 py-3;
+  }
+  .table-cell {
+    @apply px-4 py-3 text-sm text-slate-300;
+  }
+  .table-row {
+    @apply border-b border-base-700/50 hover:bg-base-800/50 transition-colors;
+  }
+}
